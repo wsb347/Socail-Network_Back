@@ -112,6 +112,7 @@ _book
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+/.idea/
 
 # AWS User-specific
 .idea/**/aws.xml
@@ -655,3 +656,4 @@ gradle-app.setting
 
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,java,gitbook,vs,cmake,eclipse,gradle,intellij+iml
+
