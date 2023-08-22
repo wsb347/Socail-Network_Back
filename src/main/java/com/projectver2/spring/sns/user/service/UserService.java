@@ -20,11 +20,10 @@ public class UserService {
     public User saveOrUpdate(User user) {
         return userRepository.findByEmail(user.getEmail())
                 .map(existingUser -> {
-                    // 이미 존재하는 사용자의 경우 정보를 갱신
                     existingUser.setUsername(user.getUserid());
                     existingUser.setCity(user.getCity());
                     return userRepository.save(existingUser);
-                }).orElseGet(() -> userRepository.save(user));  // 새 사용자는 저장
+                }).orElseGet(() -> userRepository.save(user));
     }
     public Optional<User> findByUserid(String userid) {
         return userRepository.findByUserid(userid);

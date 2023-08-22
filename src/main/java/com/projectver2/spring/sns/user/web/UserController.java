@@ -20,6 +20,10 @@ public class UserController {
 
     @GetMapping("/{userid}")
     public Optional<User> findByUserid(@PathVariable String userid){
+
         return userService.findByUserid(userid);
     }
+
 }
+
+

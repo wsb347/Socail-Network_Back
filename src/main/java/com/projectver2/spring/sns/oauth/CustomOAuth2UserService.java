@@ -28,7 +28,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         Long kakaoId = (Long) oAuth2User.getAttribute("id");
 
         Map<String, Object> properties = oAuth2User.getAttribute("properties");
-        String nickname = (String) Objects.requireNonNull(properties).get("nickname");
+        String nickname = (String) Objects.requireNonNull(properties).get("profile_nickname");
 
         Map<String, Object> kakaoAccount = oAuth2User.getAttribute("kakao_account");
         String email = (String) Objects.requireNonNull(kakaoAccount).get("email");

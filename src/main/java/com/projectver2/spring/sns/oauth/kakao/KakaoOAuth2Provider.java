@@ -30,7 +30,7 @@ public class KakaoOAuth2Provider {
 
             Long id = userInfo.getLong("id");
             String email = userInfo.getJSONObject("kakao_account").getString("email");
-            String nickname = userInfo.getJSONObject("kakao_account").getJSONObject("profile").getString("nickname");
+            String nickname = userInfo.getJSONObject("kakao_account").getString("profile_nickname");
 
             User user = new User();
             user.setKakaoId(id);
