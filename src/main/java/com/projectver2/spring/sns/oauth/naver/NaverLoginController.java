@@ -1,4 +1,4 @@
-package com.projectver2.spring.sns.oauth.controller;
+package com.projectver2.spring.sns.oauth.naver;
 
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
