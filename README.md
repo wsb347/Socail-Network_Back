@@ -2,7 +2,7 @@
 소셜네트워크 백엔드 레포
 
 [![CI](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/main.yml/badge.svg)](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/main.yml) 
- [![CodeQL](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/codeql.yml/badge.svg)](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/codeql.yml) [![Dependency Review](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/dependency-review.yml)
+ [![CodeQL](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/codeql.yml)
 
 # Getting Started
 
