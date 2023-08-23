@@ -4,7 +4,7 @@
 [![CI](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/main.yml/badge.svg)](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/main.yml) 
  [![CodeQL](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/codeql.yml)
 
-Todo List
+## Todo List on Signup and login phase
 1) Implement Social login - Kakao ✔️
 2) Implement Social login - Naver ✔️
 3) Implement Social login - Google ✔️
