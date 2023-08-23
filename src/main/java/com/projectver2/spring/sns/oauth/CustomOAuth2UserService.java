@@ -37,16 +37,16 @@ public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2Authentic
 
     User user;
     if (existingUser.isPresent()) {
-        // 이미 DB에 있는 사용자라면 해당 정보를 갱신합니다.
+        // 이미 DB에 있는 사용자라면 해당 정보를 갱신
         user = existingUser.get();
         user.setNickname(nickname); // 기타 필요한 정보 갱신
     } else {
-        // DB에 없는 새로운 사용자라면 새로운 User 객체를 생성하고 저장합니다.
+        // DB에 없는 새로운 사용자라면 새로운 User 객체를 생성하고 저장
         user = new User();
         user.setKakaoId(kakaoId);
         user.setNickname(nickname);
         user.setEmail(email);
-        user.setLoginType("SOCIAL"); // 소셜 로그인이므로
+        user.setLoginType("SOCIAL"); // 소셜 로그인이므로 DB에 로그인타입 SOCIAL로 명시
     }
 
     userService.saveOrUpdate(user);

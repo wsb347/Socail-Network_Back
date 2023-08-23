@@ -18,7 +18,7 @@ public class OAuth2ExceptionHandler {
 public ModelAndView handleOAuth2AuthenticationError(OAuth2AuthenticationException ex) {
     // 사용자가 로그인을 취소한 경우
     if (ex.getError().getErrorCode().equals("access_denied")) {
-        ModelAndView mav = new ModelAndView("redirect:/login"); // 이전 로그인 페이지로 돌아가도록 설정. 필요하면 경로 수정하세요.
+        ModelAndView mav = new ModelAndView("redirect:/login");
         return mav;
     }
     ModelAndView mav = new ModelAndView();
