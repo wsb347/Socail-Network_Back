@@ -26,6 +26,11 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http
+                .oauth2Login(oauth2Login ->
+                oauth2Login
+                .defaultSuccessUrl("/loginSuccess")
+                .failureUrl("/login")
+                )
                 .csrf((csrfConfig) ->
                         csrfConfig.disable()
                 ) // 1번

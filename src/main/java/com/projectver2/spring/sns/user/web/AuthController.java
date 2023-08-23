@@ -18,7 +18,7 @@ import java.util.UUID;
 public class AuthController {
 
     private final String NAVER_CLIENT_ID = "GuQtBxHc3QULrLswz1p2";
-    private final String NAVER_REDIRECT_URI = "https://localhost:8080/login/oauth2/code/naver";
+    private final String NAVER_REDIRECT_URI = "http://localhost:8080/login/oauth2/code/naver";
     private final String KAKAO_USER_INFO_URL = "https://kapi.kakao.com/v2/user/me";
     private final String KAKAO_REDIRECT_URI = "http://localhost:8080/login/oauth2/code/kakao";
     private final String GOOGLE_USER_INFO_URL = "https://www.googleapis.com/oauth2/v3/userinfo";
