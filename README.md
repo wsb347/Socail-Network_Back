@@ -10,7 +10,7 @@ Todo List
 3) Implement Social login - Google ✔️
 4) Link kakao social login with front and token access ✔️
 5) Link naver social login with front and token access ✔️
-6) Link google social login with front and token access ✖️
+6) Link google social login with front and token access ✔️
 7) Refactoring seperated OAuth2 classes ✔️
 8) Implement normal signup phase. ✖️
 9) Implement normal user login phase. ✖️
