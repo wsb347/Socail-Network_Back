@@ -6,13 +6,16 @@
 </head>
 <body>
     <h1>login</h1>
-    <form th:action="@{/login}" method="get">
+    <form th:action="@{/login}" method="post">
         <p><input type="text" name="username" placeholder="Username" required></p>
         <p><input type="password" name="password" placeholder="Password" required></p>
         <p><button type="submit">Login</button> </p>
     </form>
-<p><a href="/oauth2/authorization/naver">naver</a> </p>
-<p><a href="/oauth2/authorization/kakao">Kakao</a> </p>
-<p><a href="/oauth2/authorization/google">google</a> </p>
+    <div class="social-login-buttons">
+        <p><a href="/naver/login">naver</a> </p>
+        <p><a href="/kakao/login">Kakao</a> </p>
+        <p><a href="/google/login">google</a> </p>
+
+    </div>
 </body>
 </html>
