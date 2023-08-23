@@ -39,7 +39,7 @@ public class SecurityConfig {
                                 .requestMatchers("/", "/login/**", "/oauth2/authorization/**", "/login/oauth2/code/**").permitAll()
                                 .requestMatchers("/posts/**", "/api/v1/posts/**").hasRole(Role.USER.name())
                                 .requestMatchers("/admins/**", "/api/v1/admins/**").hasRole(Role.ADMIN.name())
-                                .anyRequest().authenticated()
+                                .anyRequest().permitAll()
                 )// 3번
                 .exceptionHandling((exceptionConfig) ->
                         exceptionConfig.authenticationEntryPoint(unauthorizedEntryPoint).accessDeniedHandler(accessDeniedHandler)
