@@ -12,9 +12,11 @@ Todo List
 5) Link naver social login with front and token access ✔️
 6) Link google social login with front and token access ✔️
 7) Refactoring seperated OAuth2 classes ✔️
-8) Implement normal signup phase. ✖️
-9) Implement normal user login phase. ✖️
-10) Check save separately with Social and normal users. ✖️
+8) Check the API POST Call ✔️
+9) Implement saving return value of social login user to database ✖️ (Working on)
+10) Implement normal signup phase. ✖️
+11) Implement normal user login phase. ✖️
+12) Check save separately with Social and normal users. ✖️
 
 # Getting Started
 
