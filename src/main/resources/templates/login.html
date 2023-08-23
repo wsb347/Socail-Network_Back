@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+    <h1>login</h1>
+    <form th:action="@{/login}" method="post">
+        <p><input type="text" name="username" placeholder="Username" required></p>
+        <p><input type="password" name="password" placeholder="Password" required></p>
+        <p><button type="submit">Login</button> </p>
+    </form>
+    <div class="social-login-buttons">
+        <p><a href="/naver/login">naver</a> </p>
+        <p><a href="/kakao/login">Kakao</a> </p>
+        <p><a href="/google/login">google</a> </p>
+
+    </div>
+</body>
+</html>
