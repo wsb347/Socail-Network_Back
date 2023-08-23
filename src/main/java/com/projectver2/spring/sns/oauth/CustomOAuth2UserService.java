@@ -32,7 +32,7 @@ public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2Authentic
     Map<String, Object> kakaoAccount = oAuth2User.getAttribute("kakao_account");
     String email = (String) Objects.requireNonNull(kakaoAccount).get("email");
 
-    // DB에서 이메일로 사용자를 찾습니다.
+    // DB에서 이메일로 사용자찾기
     Optional<User> existingUser = userService.findByUserid(email);
 
     User user;
