@@ -26,6 +26,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http
+
                 .oauth2Login(oauth2Login ->
                 oauth2Login
                 .defaultSuccessUrl("/loginSuccess")
@@ -41,7 +42,7 @@ public class SecurityConfig {
                 )// 2번
                 .authorizeHttpRequests((authorizeRequests) ->
                         authorizeRequests
-                                .requestMatchers("/", "/login/**", "/oauth2/authorization/**", "/login/oauth2/code/**").permitAll()
+                                .requestMatchers("/","/signup/**", "/login/**", "/oauth2/authorization/**", "/login/oauth2/code/**").permitAll()
                                 .requestMatchers("/posts/**", "/api/v1/posts/**").hasRole(Role.USER.name())
                                 .requestMatchers("/admins/**", "/api/v1/admins/**").hasRole(Role.ADMIN.name())
                                 .anyRequest().permitAll()
