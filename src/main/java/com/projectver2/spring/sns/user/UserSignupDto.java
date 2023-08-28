@@ -10,7 +10,7 @@ public class UserSignupDto {
     private String password;
     private String city;
     private String email;
-    private final String loginType = "NORMAL";
+    private String loginType = "NORMAL";
 
     public UserSignupDto() {}
 
@@ -60,4 +60,12 @@ public class UserSignupDto {
         user.setLoginType(this.loginType);
         return user;
     }
+
+    public void setLoginType(String loginType) {
+    this.loginType = loginType;
+}
+
+public String getLoginType() {
+    return loginType;
+}
 }

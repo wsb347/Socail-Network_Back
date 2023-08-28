@@ -6,8 +6,8 @@
 </head>
 <body>
     <h1>login</h1>
-    <form th:action="@{/login}" method="post">
-        <p><input type="text" name="username" placeholder="Username" required></p>
+    <form th:action="@{/users/login}" method="post">
+        <p><input type="text" name="userid" placeholder="Username" required></p>
         <p><input type="password" name="password" placeholder="Password" required></p>
         <p><button type="submit">Login</button> </p>
     </form>
@@ -15,8 +15,9 @@
         <p><a href="/naver/login">naver</a> </p>
         <p><a href="/kakao/login">Kakao</a> </p>
         <p><a href="/google/login">google</a> </p>
-        <p><a href="/signup">회원가입</a></p>
+        <p><a href="/users/signup">회원가입</a></p>
 
     </div>
 </body>
+
 </html>

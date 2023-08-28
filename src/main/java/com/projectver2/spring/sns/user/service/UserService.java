@@ -20,7 +20,7 @@ public class UserService {
     public User saveOrUpdate(User user) {
     return userRepository.findByEmail(user.getEmail())
         .map(existingUser -> {
-            existingUser.setNickname(user.getUsername());
+            existingUser.setUsername(user.getUsername());
             return userRepository.save(existingUser);
         })
         .orElseGet(() -> {
