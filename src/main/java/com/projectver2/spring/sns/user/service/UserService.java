@@ -20,13 +20,10 @@ public class UserService {
     public User saveOrUpdate(User user) {
     return userRepository.findByEmail(user.getEmail())
         .map(existingUser -> {
-            // 기존 정보와 새로운 정보를 비교하여 업데이트
             existingUser.setNickname(user.getUsername());
-            // 기타 필요한 정보 업데이트
             return userRepository.save(existingUser);
         })
         .orElseGet(() -> {
-            // 새로운 사용자 저장
             return userRepository.save(user);
         });
 }
