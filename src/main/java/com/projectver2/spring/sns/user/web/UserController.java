@@ -73,8 +73,6 @@ public ResponseEntity<?> registerUser(@ModelAttribute UserSignupDto userSignupDt
             return ResponseEntity.ok(response);
         }
     }
-
-
     return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("아이디 또는 비밀번호가 잘못되었습니다.");
 }
 
