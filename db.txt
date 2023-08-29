@@ -1,0 +1,53 @@
+CREATE TABLE `User` (
+	`id`	INT	NOT NULL	AUTO_INCREMENT,
+	`username`	VARCHAR(255)	NOT NULL,
+	`userid`	VARCHAR(255)	NOT NULL,
+	`password`	VARCHAR(255)	NOT NULL,
+	`city`	VARCHAR(100)	NULL,
+	`email`	VARCHAR(255)	NOT NULL,
+	`login_type`	ENUM('NORMAL', 'SOCIAL')	NOT NULL,
+	`created_at`	TIMESTAMP	NULL	DEFAULT CURRENT_TIMESTAMP,
+	`updated_at`	TIMESTAMP	NULL	DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE `OAuthProvider` (
+	`id`	INT	NOT NULL	AUTO_INCREMENT,
+	`name`	VARCHAR(100)	NOT NULL
+);
+
+CREATE TABLE `UserOAuth` (
+	`id`	INT	NOT NULL	AUTO_INCREMENT,
+	`user_id`	INT	NOT NULL,
+	`provider_id`	INT	NOT NULL,
+	`oauth_id`	VARCHAR(255)	NOT NULL,
+	`access_token`	TEXT	NOT NULL,
+	`refresh_token`	TEXT	NULL,
+	`expires_in`	INT	NULL
+);
+
+ALTER TABLE `User` ADD CONSTRAINT `PK_USER` PRIMARY KEY (
+	`id`
+);
+
+ALTER TABLE `OAuthProvider` ADD CONSTRAINT `PK_OAUTHPROVIDER` PRIMARY KEY (
+	`id`
+);
+
+ALTER TABLE `UserOAuth` ADD CONSTRAINT `PK_USEROAUTH` PRIMARY KEY (
+	`id`
+);
+
+ALTER TABLE `UserOAuth` ADD CONSTRAINT `FK_User_TO_UserOAuth_1` FOREIGN KEY (
+	`user_id`
+)
+REFERENCES `User` (
+	`id`
+);
+
+ALTER TABLE `UserOAuth` ADD CONSTRAINT `FK_OAuthProvider_TO_UserOAuth_1` FOREIGN KEY (
+	`provider_id`
+)
+REFERENCES `OAuthProvider` (
+	`id`
+);
+
