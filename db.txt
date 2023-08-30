@@ -51,3 +51,6 @@ REFERENCES `OAuthProvider` (
 	`id`
 );
 
+ALTER TABLE `user`
+ADD COLUMN `kakao_id` VARCHAR(255) NULL,
+ADD COLUMN `nickname` VARCHAR(255) NULL;
