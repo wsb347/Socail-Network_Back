@@ -4,6 +4,7 @@ import com.projectver2.spring.sns.user.domain.User;
 import com.projectver2.spring.sns.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -47,6 +48,13 @@ public class UserService {
                 });
 
 
+    }
 
+    @Transactional
+    public User userDelete(String userid) {
+
+        userRepository.deleteUserByUserid(userid);
+
+        return null;
     }
 }

@@ -52,5 +52,5 @@ REFERENCES `OAuthProvider` (
 );
 
 ALTER TABLE `user`
-ADD COLUMN `kakao_id` VARCHAR(255) NULL AFTER `login_type`,
-ADD COLUMN `nickname` VARCHAR(255) NULL AFTER `kakao_id`;
+ADD COLUMN `kakao_id` VARCHAR(255) NULL,
+ADD COLUMN `nickname` VARCHAR(255) NULL;

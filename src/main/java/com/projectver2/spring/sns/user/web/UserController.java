@@ -31,17 +31,6 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
     }
 
-    @GetMapping("/{userid}")
-    public ResponseEntity<?> findByUserid(@PathVariable String userid) {
-        Optional<User> user = userService.findByUserid(userid);
-        if (user.isPresent()) {
-            return ResponseEntity.ok(user.get());
-        } else {
-            Map<String, String> error = new HashMap<>();
-            error.put("error", "해당 유저를 찾을 수 없습니다.");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
-        }
-    }
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@ModelAttribute UserSignupDto userSignupDto) {
@@ -87,8 +76,19 @@ public class UserController {
         return "redirect:/login";
     }
 
+    @GetMapping("/mypage/{userid}")
+    public ResponseEntity<?> findByUserid(@PathVariable String userid) {
+        Optional<User> user = userService.findByUserid(userid);
+        if (user.isPresent()) {
+            return ResponseEntity.ok(user.get());
+        } else {
+            Map<String, String> error = new HashMap<>();
+            error.put("error", "해당 유저를 찾을 수 없습니다.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+        }
+    }
 
-    //우수빈 구현시작
+
     @PutMapping("/mypage/{userid}")
     public ResponseEntity<?> userModify(@PathVariable String userid, @RequestBody User user, HttpSession session) {
 
@@ -104,6 +104,22 @@ public class UserController {
         }
 
     }
+
+    @DeleteMapping("/{userid}")
+    public ResponseEntity<?> deleteUser(@PathVariable String userid) {
+        Optional<User> current_login_user  = userService.findByUserid(userid);
+        if (current_login_user .isPresent()) {
+            userService.userDelete(userid);
+
+            return ResponseEntity.ok("회원탈퇴가 완료되었습니다.");
+        } else {
+            Map<String, String> error = new HashMap<>();
+            error.put("error", "해당 유저를 찾을 수 없습니다.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+        }
+
+    }
+
 
 }
 
