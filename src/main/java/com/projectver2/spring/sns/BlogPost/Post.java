@@ -33,5 +33,9 @@ public class Post extends BaseTimeEntity {
     private int like;
     private LocalDateTime regDate;
 
+    public void update(String content) {
+        this.content = content;
+
+    }
 }
 

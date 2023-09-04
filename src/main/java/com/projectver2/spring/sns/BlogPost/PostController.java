@@ -21,4 +21,10 @@ public class PostController {
         return "success";
     }
 
+        @PutMapping("/update")
+        public String update(@PathVariable Integer id, @RequestBody PostRequestDto requestDto, @AuthenticationPrincipal SecurityUser principal) {
+            requestDto.setUser(principal.getUser());
+            return postService.update(id, requestDto);
+        }
+
 }
