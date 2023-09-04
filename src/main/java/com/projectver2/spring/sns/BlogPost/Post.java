@@ -38,4 +38,3 @@ public class Post extends BaseTimeEntity {
 
     }
 }
-
