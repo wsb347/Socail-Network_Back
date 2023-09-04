@@ -2,6 +2,9 @@ package com.projectver2.spring.sns.user.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import org.springframework.security.core.GrantedAuthority;
+
+import java.util.List;
 
 @Entity
 public class User {
@@ -55,7 +58,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
 
 }
 
