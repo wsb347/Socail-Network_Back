@@ -77,15 +77,18 @@ public class UserController {
     }
 
     @GetMapping("/mypage/{userid}")
-    public ResponseEntity<?> findByUserid(@PathVariable String userid) {
+    public String findByUserid(@PathVariable String userid, Model model) {
         Optional<User> user = userService.findByUserid(userid);
         if (user.isPresent()) {
-            return ResponseEntity.ok(user.get());
+            ResponseEntity.ok(user.get());
+            model.addAttribute("user", user);
+            return "mypage";
         } else {
             Map<String, String> error = new HashMap<>();
             error.put("error", "해당 유저를 찾을 수 없습니다.");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
-        }
+            ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+            return "redirect:/users/signup";
+       }
     }
 
 
@@ -106,20 +109,20 @@ public class UserController {
     }
 
     @DeleteMapping("/{userid}")
-    public ResponseEntity<?> deleteUser(@PathVariable String userid) {
+    public String deleteUser(@PathVariable String userid) {
         Optional<User> current_login_user  = userService.findByUserid(userid);
         if (current_login_user .isPresent()) {
             userService.userDelete(userid);
 
-            return ResponseEntity.ok("회원탈퇴가 완료되었습니다.");
+            ResponseEntity.ok("회원탈퇴가 완료되었습니다.");
+            return "redirect:/users/signup";
         } else {
             Map<String, String> error = new HashMap<>();
             error.put("error", "해당 유저를 찾을 수 없습니다.");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+            ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+            return "redirect:/users/signup";
         }
-
     }
-
 
 }
 
