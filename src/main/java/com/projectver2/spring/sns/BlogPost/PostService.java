@@ -1,5 +1,6 @@
 package com.projectver2.spring.sns.BlogPost;
 
+import com.projectver2.spring.sns.user.domain.User;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,10 @@ public class PostService {
 
     public List<Post> postAll() {
        return postRepository.findAllByOrderByIdDesc();
+    }
+
+    public List<Post> postListByMyPost(String username) {
+        return postRepository.findPostByUser(username);
     }
 
 //    public String update(Integer id, PostRequestDto requestDto) {
