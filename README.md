@@ -4,20 +4,6 @@
 [![CI](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/main.yml/badge.svg)](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/main.yml) 
  [![CodeQL](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/d982h8st7/Social-Network_Back/actions/workflows/codeql.yml)
 
-## Todo List on Signup and login phase
-1) Implement Social login - Kakao ✔️
-2) Implement Social login - Naver ✔️
-3) Implement Social login - Google ✔️
-4) Link kakao social login with front and token access ✔️
-5) Link naver social login with front and token access ✔️
-6) Link google social login with front and token access ✔️
-7) Refactoring seperated OAuth2 classes ✔️ 
-8) Check the API POST Call ✔️
-9) Implement saving return value of social login user to database ✖️ (Working on)
-10) Implement normal signup phase. ✖️
-11) Implement normal user login phase. ✖️
-12) Check save separately with Social and normal users. ✖️
- 
 # Getting Started
 
 ### Reference Documentation
