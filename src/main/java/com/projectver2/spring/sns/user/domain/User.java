@@ -1,5 +1,6 @@
 package com.projectver2.spring.sns.user.domain;
 
+import com.projectver2.spring.sns.mypage.entity.Bookmark;
 import jakarta.persistence.*;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
@@ -25,6 +26,9 @@ public class User {
     private String loginType;
     private Long kakaoId;
     private String nickname;
+
+    @OneToMany(mappedBy = "user")
+    private List<Bookmark> bookmarks;
 
     public void setUsername(String username) {
         this.username = username;

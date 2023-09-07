@@ -22,10 +22,6 @@ public class PostService {
        return postRepository.findAllByOrderByIdDesc();
     }
 
-    public List<Post> postListByMyPost(String username) {
-        return postRepository.findPostByUser(username);
-    }
-
 //    public String update(Integer id, PostRequestDto requestDto) {
 //        String message = "fail";
 //        Post post = postRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));

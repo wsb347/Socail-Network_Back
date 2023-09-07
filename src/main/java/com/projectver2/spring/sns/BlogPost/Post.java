@@ -1,12 +1,11 @@
 package com.projectver2.spring.sns.BlogPost;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import com.projectver2.spring.sns.mypage.entity.Bookmark;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -32,6 +31,10 @@ public class Post {
     private String image;
     private int like;
     private LocalDateTime regDate;
+
+    @OneToMany(mappedBy = "post")
+    private List<Bookmark> bookmarks;
+
 
     public void update(String content) {
         this.content = content;

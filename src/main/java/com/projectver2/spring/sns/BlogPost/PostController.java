@@ -35,11 +35,7 @@ public class PostController {
         return postService.postAll();
     }
 
-    @GetMapping("/mypage/posts")
-    public List<Post> postListByMyPost( User user, HttpSession session){
-        String username = (String) session.getAttribute(user.getUsername());
-        return postService.postListByMyPost(username);
-    }
+
 
 //        @PutMapping("/update")
 //        public String update(@PathVariable Integer id, @RequestBody PostRequestDto requestDto, @AuthenticationPrincipal SecurityUser principal) {
