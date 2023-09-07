@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MYPAGE</title>
+</head>
+<body>
+<h1>MY PAGE</h1>
+
+<!-- 유저 정보가 없을 때의 처리 -->
+<div th:if="${user.isEmpty()}">
+    <p th:text="${error}"></p>
+    <a th:href="@{/signup}">회원가입</a>
+</div>
+
+<!-- 유저 정보가 있을 때의 처리 -->
+<div th:if="${user.isPresent()}">
+    <p>User ID: <span th:text="${user.get().userid}"></span></p>
+    <p>User city: <span th:text="${user.get().city}"></span></p>
+    <p>User username: <span th:text="${user.get().username}"></span></p>
+    <p>User email: <span th:text="${user.get().email}"></span></p>
+    <p>User create_at: <span th:text="${user.get().getPassword()}"></span></p>
+</div>
+
+</body>
+</html>
