@@ -5,6 +5,8 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(value = "/api/post", produces = "application/json",
@@ -27,11 +29,16 @@ public class PostController {
         }
     }
 
-//
+    @GetMapping()
+    public List<Post> postAll(){
+        return postService.postAll();
+    }
+
+
 //        @PutMapping("/update")
 //        public String update(@PathVariable Integer id, @RequestBody PostRequestDto requestDto, @AuthenticationPrincipal SecurityUser principal) {
 //            requestDto.setUser(principal.getUser());
 //            return postService.update(id, requestDto);
 //        }
-//
+
 }

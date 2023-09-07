@@ -4,6 +4,8 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class PostService {
@@ -13,6 +15,10 @@ public class PostService {
     @Transactional
     public Post save(PostRequestDto requestDto) {
         return postRepository.save(requestDto.toEntity());
+    }
+
+    public List<Post> postAll() {
+       return postRepository.findAllByOrderByIdDesc();
     }
 
 //    public String update(Integer id, PostRequestDto requestDto) {
