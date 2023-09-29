@@ -1,5 +1,6 @@
 package com.projectver2.spring.sns.BlogPost;
 
+import com.projectver2.spring.sns.user.domain.User;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

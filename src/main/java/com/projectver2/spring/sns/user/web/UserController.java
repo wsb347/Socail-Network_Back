@@ -105,7 +105,6 @@ public class UserController {
             error.put("error", "해당 유저를 찾을 수 없습니다.");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
         }
-
     }
 
     @DeleteMapping("/{userid}")

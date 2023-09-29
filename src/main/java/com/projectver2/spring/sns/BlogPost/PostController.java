@@ -1,5 +1,7 @@
 package com.projectver2.spring.sns.BlogPost;
 
+import com.projectver2.spring.sns.user.domain.User;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,7 +13,6 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api/post", produces = "application/json",
         method = {RequestMethod.GET, RequestMethod.POST})
-
 public class PostController {
     private final PostService postService;
 
@@ -33,6 +34,7 @@ public class PostController {
     public List<Post> postAll(){
         return postService.postAll();
     }
+
 
 
 //        @PutMapping("/update")

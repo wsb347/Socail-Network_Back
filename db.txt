@@ -54,3 +54,9 @@ REFERENCES `OAuthProvider` (
 ALTER TABLE `user`
 ADD COLUMN `kakao_id` VARCHAR(255) NULL,
 ADD COLUMN `nickname` VARCHAR(255) NULL;
+
+CREATE TABLE `bookMark` (
+    `id` int AUTO_INCREMENT PRIMARY KEY,
+	`post_id`	int	NOT NULL,
+	`userid`	INT	not null
+);
