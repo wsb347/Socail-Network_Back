@@ -15,6 +15,6 @@ public interface PostListRepository extends JpaRepository<Post, Integer> {
 
      List<Post> findPostByUser(String user);
 
-     @Query("SELECT p FROM post p inner JOIN user u ON p.user = u.userid WHERE u.userid = :userid")
-     List<Post> findPostByUserandlike(@Param("userid") User user, Post post);
+    /* @Query("SELECT p FROM post p inner JOIN user u ON p.user = u.userid WHERE u.userid = :userid")
+     List<Post> findPostByUserandlike(@Param("userid") User user, Post post);*/
 }
